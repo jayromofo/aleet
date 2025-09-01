@@ -1,0 +1,47 @@
+application:
+  name: "Aleet CLI"
+  version: "1.0.0"
+  debug: "true"
+  max_problems: 100
+  port: 8081
+
+
+dir:
+  problem_src: "problems/src"
+  solved_dir: "problems/solved"
+  template_dir: "template/"
+
+stats:
+  work_in_progress: 0
+  solved: 0
+  
+database:
+  host: "localhost"
+  port: 5432
+  name: "leetcode_db"
+
+languages: 
+  - "cpp"
+  - "go"
+  - "python"
+
+# Mixed Nested
+leetcode:
+  api_url: "https://leetcode.com/graphql"
+  categories:
+    - name: "Array"
+      count: 50
+    - name: "String"
+      count: 30
+  settings:
+    auto_open_browser: true
+    default_language: "cpp"
+
+# Environment-specific Config
+development:
+  log_level: "debug"
+  cache_enabled: false
+
+production:
+  log_level: "info"
+  cache_enabled: true
