@@ -45,7 +45,7 @@ func init() {
 	// rootCmd.AddCommand(serveCmd)
 	// rootCmd.AddCommand(statsCmd)
 
-	// rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.jaycode.yaml)")
+	// rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.jayromofo.yaml)")
 
 	// Cobra also supports local flags, which will only run
 	// when this action is called directly.

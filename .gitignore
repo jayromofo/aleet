@@ -60,6 +60,8 @@ go.work.sum
 # env file
 .env
 
+problems/*
+
 # Editor/IDE
 # .idea/
 # .vscode/

@@ -10,7 +10,7 @@ CXX = g++
 #########################
 # GO
 #########################
-BINARY_NAME=aleet-cli 
+BINARY_NAME=aleet 
 MAIN_PATH=./cmd/main.go
 GO_BUILD_DIR=./bin
 ##################################################
@@ -110,7 +110,7 @@ install:
 	 go install $(GOFLAGS) $(LDFLAGS) $(MAIN_PATH)
 
 start: build
-	./bin/aleet-cli serve
+	./bin/aleet serve
 
 # CLI Help
 help:

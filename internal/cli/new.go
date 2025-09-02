@@ -5,22 +5,39 @@ package cli
 
 import (
 	"fmt"
+	"strconv"
+	"time"
 
+	"github.com/jayromofo/aleet/internal/generator"
 	"github.com/spf13/cobra"
 )
 
 // newCmd represents the new command
 var newCmd = &cobra.Command{
 	Use:   "new",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Short: "Create a new problem to solve",
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("new called")
+		problemNumber := args[0]
+		// problemTitle := args[1]
+
+		d := time.Now()
+
+		data := generator.ProblemData{
+			Author:        "Jason Rossetti",
+			Date:          d.Format("010206"),
+			ProblemNumber: problemNumber,
+			ProblemTitle:  "This is a problem",
+			Difficulty:    "Medium",
+			Description:   "Reverse Vowels of a String",
+			LongDate:      d.Month().String() + " " + strconv.Itoa(d.Day()) + " " + strconv.Itoa(d.Year()),
+		}
+
+		filepath := fmt.Sprintf("./problems/src/%s-%s.cpp", data.Date, data.ProblemNumber)
+
+		ok := generator.GenerateCppFile(&data, filepath)
+		if ok != nil {
+			println("Unable to create file: ", ok)
+		}
 	},
 }
 
