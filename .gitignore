@@ -61,6 +61,7 @@ go.work.sum
 .env
 
 problems/*
+config/config.yaml
 
 # Editor/IDE
 # .idea/
